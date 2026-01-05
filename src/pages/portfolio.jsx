@@ -130,10 +130,8 @@ const Portfolio = () => {
           <RecentActivity activities={recentActivities} />
         </div>
 
-        {/* Bottom Row: Performance Graph */}
       </div>
 
-      {/* Your Holdings */}
       <div className="dashboard-card px-4 pt-6 pb-4 relative ">
       <div className="table-blur absolute left-1/2 transform -translate-x-1/2 h-10 w-1/2"></div>
         <h2 className="text-xl font-semibold text-white  text-center ">Your Holdings</h2>
