@@ -8,7 +8,6 @@ import BankIcon from "../components/icons/bank";
 import DownIcon from "../components/icons/down";
 
 const Portfolio = () => {
-  // Performance Graph data
   const performanceData = [
     { month: "Jan 25", totalValue: 12500, yieldIncome: 13000 },
     { month: "Feb 25", totalValue: 15000, yieldIncome: 10000 },
@@ -97,7 +96,6 @@ const Portfolio = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header Section */}
       <div>
         <h1 className="text-xl font-bold text-white mb-2">My Portfolio</h1>
         <p className="text-gray-400 text-sm">

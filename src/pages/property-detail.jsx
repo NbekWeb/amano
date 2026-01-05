@@ -52,7 +52,6 @@ const PropertyDetail = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex justify-between items-center">
         <button
           onClick={() => navigate("/marketplace")}
@@ -71,7 +70,6 @@ const PropertyDetail = () => {
         </button>
       </div>
 
-      {/* Main Image Header */}
       <PropertyImageHeader
         image={nImage}
         badges={["raising", "infrastructure"]}
@@ -82,12 +80,9 @@ const PropertyDetail = () => {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Overview */}
           <OverviewSection stats={overviewStats} />
 
-          {/* Tabs */}
           <PropertyTabs
             tabs={[
               "Details",
@@ -100,19 +95,14 @@ const PropertyDetail = () => {
             onTabChange={setSelectedTab}
           />
 
-          {/* Description */}
           <DescriptionSection description="Explore extensive property listings, connect with professional agents, and stay informed about real estate trends through our comprehensive blog. Discover your perfect property investment opportunity with detailed insights and expert guidance." />
 
-          {/* Key Features & Amenities */}
           <FeaturesSection features={features} />
 
-          {/* Location */}
           <LocationSection />
         </div>
 
-        {/* Right Column */}
         <div className="space-y-6 ">
-          {/* Investment Overview */}
           <InvestmentOverview
             totalRaised="35.46%"
             tokenPrice="125.50"
@@ -128,8 +118,6 @@ const PropertyDetail = () => {
             targetAmount={350000}
           />
 
-          {/* Property Developer */}
-          
             <PropertyDeveloper
               name="ITO Agency"
               website="itodigitalagency.com"

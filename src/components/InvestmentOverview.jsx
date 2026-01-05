@@ -14,27 +14,22 @@ const InvestmentOverview = ({
   currentAmount,
   targetAmount
 }) => {
-  // Calculate progress percentage
   const progressPercentage = currentAmount && targetAmount 
     ? (currentAmount / targetAmount) * 100 
     : 35.46;
   
-  // Calculate number of filled segments (out of 60 total segments)
   const filledSegments = Math.round((progressPercentage / 100) * 60);
   
-  // Calculate total raised percentage dynamically
   const calculatedTotalRaised = currentAmount && targetAmount
     ? `${progressPercentage.toFixed(2)}%`
     : totalRaised;
   
-  // Parse token available number
   const tokenCount = tokenAvailable ? parseInt(tokenAvailable.match(/\d+/)?.[0] || '120') : 120;
   return (
     <div className="dashboard-card p-6 relative">
     <div className="table-blur absolute top-3 rounded-lg right-3 h-10 w-1/2 "></div>
       <h2 className="text-xl font-semibold text-white mb-4">Investment Overview</h2>
       
-      {/* Total raised & Token Price */}
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div className="p-4 bg-white/5 rounded-lg">
           <div className="text-gray-400 text-sm mb-1">Total raised</div>
@@ -46,7 +41,6 @@ const InvestmentOverview = ({
         </div>
       </div>
 
-      {/* Progress Bar */}
       <div className="mb-4">
         <div className="flex justify-between text-sm text-gray-400 mb-2">
           <span>{progress || `$${currentAmount?.toLocaleString() || '124110'} / $${targetAmount?.toLocaleString() || '350,000'}`}</span>
@@ -65,7 +59,6 @@ const InvestmentOverview = ({
         </div>
       </div>
 
-      {/* Buy amount */}
       <div className="mb-4">
         <label className="text-gray-400 text-sm mb-2 block">Buy amount</label>
         <div className="flex gap-2">
@@ -81,7 +74,6 @@ const InvestmentOverview = ({
         <div className="text-gray-400 text-xs mt-1 text-right">Your balance: 1234</div>
       </div>
 
-      {/* ROI & APR */}
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div>
           <div className="text-gray-400 text-sm">ROI</div>
@@ -93,7 +85,6 @@ const InvestmentOverview = ({
         </div>
       </div>
 
-      {/* Additional Info */}
       <div className="space-y-2 mb-4 text-sm">
         <div className="flex justify-between">
           <span className="text-gray-400">Required Funds</span>
@@ -109,7 +100,6 @@ const InvestmentOverview = ({
         </div>
       </div>
 
-      {/* Invest Now Button */}
       <button className="w-full px-4 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-hover transition-colors mb-2">
         Invest Now
       </button>

@@ -20,7 +20,6 @@ const Dashboard = () => {
   const [incomeType, setIncomeType] = useState('Dividend');
   const [incomePeriod, setIncomePeriod] = useState('Monthly');
 
-  // Sample data for charts
   const incomeData = [
     { month: 'Jan', income: 20000 },
     { month: 'Feb', income: 18500 },
@@ -55,13 +54,11 @@ const Dashboard = () => {
 
   return (
     <div className="space-y-6">
-      {/* Welcome Section */}
       <div>
         <h1 className="text-xl font-bold text-white mb-2">Dashboard</h1>
         <p className="text-white-70 text-sm">Welcome back! Here is your dashboard overview</p>
       </div>
 
-      {/* Stats Cards and Compliance Card */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <StatsCard 
           title="Total Portfolio" 
@@ -90,14 +87,10 @@ const Dashboard = () => {
         <ComplianceCard />
       </div>
 
-      {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column - Portfolio Snapshot */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Portfolio Snapshot */}
           <PortfolioTable holdings={portfolioHoldings} />
 
-          {/* Income Summary */}
           <div className="dashboard-card p-6 income-summary-card">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold text-white">Income Summary</h2>
@@ -167,15 +160,12 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Right Column */}
         <div className="space-y-6">
-          {/* Portfolio Allocations */}
           <PortfolioAllocations 
                     data={portfolioData}
             totalValue="$248,532.00"
           />
 
-          {/* Recent Activity */}
           <div className="dashboard-card p-6">
           <div className="table-blur  absolute left-1/2 transform -translate-x-1/2 top-10 h-10 w-1/2 "></div>
             <h2 className="text-xl font-semibold text-white mb-4">Recent Activity</h2>

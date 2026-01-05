@@ -25,13 +25,11 @@ const Sidebar = ({ currentPage, setCurrentPage }) => {
 
   return (
     <div className="w-64 h-full flex flex-col border-r border-gray-700  relative overflow-hidden">
-      {/* Diagonal Gradient Overlay with Blur */}
       <div className="sidebar-gradient-overlay" />
       <div className="h-18 border-b flex items-center pl-5 border-gray-700 relative z-10">
           <img src={logo} alt="AMANO INVEST" className="h-11.5 w-auto" />
       </div>
 
-      {/* Navigation Menu */}
       <nav className="flex-1 px-4 py-6 space-y-2 relative z-10">
         {menuItems.map((item) => {
           const Icon = item.icon;
@@ -54,7 +52,6 @@ const Sidebar = ({ currentPage, setCurrentPage }) => {
         })}
       </nav>
 
-      {/* Settings */}
       <div className="p-4 border-t border-gray-800 relative z-10">
         <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-bg-hover transition-all">
           <SettingsIcon />

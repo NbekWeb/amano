@@ -119,13 +119,11 @@ const Marketplace = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div>
         <h1 className="text-xl font-bold text-white mb-2">Marketplace</h1>
         <p className="text-gray-400 text-sm">Invest in tokenized real-world assets</p>
       </div>
 
-      {/* Category Tabs and Filters */}
       <div className="flex justify-between items-center">
         <div className="flex gap-2 overflow-x-auto">
           {categories.map((category) => (
@@ -159,11 +157,9 @@ const Marketplace = () => {
         </div>
       </div>
 
-      {/* Asset Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {assets.map((asset) => (
           <div key={asset.id} className="dashboard-card p-0 overflow-hidden">
-            {/* Image */}
             <div className="relative h-48">
               <img src={asset.image} alt={asset.title} className="w-full h-full object-cover" />
               <div className="absolute top-3 left-3">
@@ -185,7 +181,6 @@ const Marketplace = () => {
                   <HeartIcon filled={favorites.has(asset.id)} />
                 </button>
               </div>
-              {/* Funded Progress */}
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-white text-xs">Funded</span>
@@ -200,7 +195,6 @@ const Marketplace = () => {
               </div>
             </div>
 
-            {/* Content */}
             <div className="p-4 space-y-3">
               <h3 className="text-white text-lg font-semibold">{asset.title}</h3>
               <div className="flex items-center gap-1 text-gray-400 text-sm">
@@ -249,18 +243,15 @@ const Marketplace = () => {
         ))}
       </div>
 
-      {/* Advanced Filters Dropdown */}
       <AdvancedFilters
         isOpen={showFilters}
         onClose={() => setShowFilters(false)}
         buttonRef={filterButtonRef}
         onApply={(filters) => {
           console.log('Applied filters:', filters);
-          // Handle filter application here
         }}
         onReset={() => {
           console.log('Filters reset');
-          // Handle filter reset here
         }}
       />
     </div>

@@ -1,11 +1,9 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const PortfolioAllocations = ({ data, totalValue }) => {
-  // Token segmentini 10 ta kichik segmentga bo'lish
   const processedData = [];
   data.forEach((entry) => {
     if (entry.name === 'Token') {
-      // Token segmentini 10 ta kichik segmentga bo'lish
       const segmentValue = entry.value / 20;
       for (let i = 0; i < 20; i++) {
         processedData.push({
@@ -28,7 +26,6 @@ const PortfolioAllocations = ({ data, totalValue }) => {
     <div className="table-blur  absolute right-1  top-10 h-12 w-1/3 "></div>
       <h2 className="text-xl font-semibold text-white mb-4">Portfolio Allocations</h2>
       
-      {/* Semi-circular Chart */}
       <div className="h-32 mb-6 relative ">
         <ResponsiveContainer width="100%" height="100%" >
           <PieChart >
@@ -67,14 +64,12 @@ const PortfolioAllocations = ({ data, totalValue }) => {
           </PieChart>
         </ResponsiveContainer>
         
-        {/* Center Text */}
         <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 translate-y-1/4 text-center ">
           <p className="text-gray-400 text-sm mb-1">Total portfolio</p>
           <p className="text-base font-bold text-white">{totalValue}</p>
         </div>
       </div>
 
-      {/* Allocation List */}
       <div className="space-y-2">
         {data.map((item, index) => (
           <div key={index} className="portfolio-allocation-item">

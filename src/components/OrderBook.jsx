@@ -28,7 +28,6 @@ const OrderBook = ({ sellOrders, buyOrders }) => {
         </button>
       </div>
       <div className="space-y-4">
-        {/* Sell Orders */}
         <div className="space-y-1">
           <table className="w-full text-sm">
             <thead>
@@ -56,13 +55,11 @@ const OrderBook = ({ sellOrders, buyOrders }) => {
           </div>
         </div>
 
-        {/* Current Price */}
         <div className="text-center py-2 border-y border-gray-700">
           <p className="text-white text-lg font-bold">2,891.69</p>
           <p className="text-gray-400 text-xs">2.891.69</p>
         </div>
 
-        {/* Buy Orders */}
         <div className="space-y-1">
           <table className="w-full text-sm">
             <thead>

@@ -19,7 +19,6 @@ const HoldingsDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Performance Graph data - wavy line matching the image
   const performanceData = [
     { month: "Jan", totalValue: 45000, yieldIncome: 0 },
     { month: "Feb", totalValue: 27000, yieldIncome: 5000 },
@@ -75,7 +74,6 @@ const HoldingsDetail = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header Section */}
       <div>
         <button 
           onClick={() => navigate('/portfolio')}
@@ -85,7 +83,6 @@ const HoldingsDetail = () => {
         </button>
       </div>
 
-      {/* Portfolio Header Card */}
       <PortfolioHeaderCard
         id={id}
         image={nImage}
@@ -95,21 +92,16 @@ const HoldingsDetail = () => {
         description="Diversified portfolio of early-stage tech companies in Silicon Valley, focusing on AI, blockchain, and sustainable technologies."
       />
 
-      {/* Key Metrics */}
       <KeyMetrics metrics={metrics} />
 
-      {/* Performance Analytics */}
       <PerformanceAnalytics data={performanceData} />
 
-      {/* Detailed Information Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column */}
         <div className="lg:col-span-2 space-y-6">
           <TokenInformation tokenData={tokenData} />
           <PayoutHistory payouts={payoutHistory} onViewAll={() => console.log('View all payouts')} />
         </div>
 
-        {/* Right Column */}
         <div className="space-y-6">
           <OwnershipBreakdown ownership={10} totalInvestors={42} />
           <LegalDocuments documents={legalDocuments} />

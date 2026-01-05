@@ -1,6 +1,5 @@
 const OwnershipBreakdown = ({ ownership, totalInvestors }) => {
   const ownershipPercentage = ownership || 0;
-  // Calculate number of filled segments (out of 100 total segments)
   const filledSegments = Math.round((ownershipPercentage / 100) * 100);
 
   return (

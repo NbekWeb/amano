@@ -92,19 +92,15 @@ const Wallet = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div>
         <h1 className="text-xl font-bold text-white mb-2">Wallet</h1>
         <p className="text-gray-400 text-sm">Manage your funds and assets</p>
       </div>
 
-      {/* Total Portfolio Value Card */}
       <WalletPortfolioCard totalValue="$58,233.99" change="+12.5%" />
 
-      {/* Performance Graph */}
       <WalletPerformanceGraph data={performanceData} />
 
-      {/* Assets/Transactions Tabs */}
       <WalletTabs 
         tabs={['Assets', 'Transactions']} 
         selectedTab={selectedTab} 
@@ -113,17 +109,14 @@ const Wallet = () => {
 
       {selectedTab === 'Assets' && (
         <>
-          {/* Asset Summary Cards */}
           <WalletAssetSummary assets={assetSummary} />
 
-          {/* Asset Tabs */}
           <WalletTabs 
             tabs={['Crypto', 'Fiat', 'RWA tokens']} 
             selectedTab={selectedAssetTab} 
             onTabChange={setSelectedAssetTab} 
           />
 
-          {/* Assets Table */}
           {selectedAssetTab === 'Crypto' && (
             <WalletAssetsTable assets={cryptoAssets} />
           )}

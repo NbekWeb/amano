@@ -5,7 +5,6 @@ const TopNav = () => {
   return (
     <div className="h-18 border-b border-gray-700 flex items-center justify-between px-6 relative ">
     <div className="topnav-blur absolute -top-5 h-12.5 left-1/2 transform -translate-x-1/2 w-1/2 border"></div>
-      {/* Search Bar */}
       <div className="flex-1 max-w-md">
         <div className="relative">
           <input
@@ -39,19 +38,15 @@ const TopNav = () => {
         </div>
       </div>
 
-      {/* Right Side Icons and User */}
       <div className="flex items-center gap-4">
-        {/* Wallet Icon */}
         <button className="topnav-icon-button">
           <WalletIcon />
         </button>
 
-        {/* Ring Icon */}
         <button className="topnav-icon-button relative">
           <RingIcon />
         </button>
 
-        {/* User Profile */}
         <div className="flex items-center gap-3 pl-4 pr-10 border-gray-700">
           <div className="relative ">
             <div className="topnav-avatar-wrapper ">

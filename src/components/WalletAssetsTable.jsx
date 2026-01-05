@@ -3,14 +3,12 @@ const WalletAssetsTable = ({ assets }) => {
     <div className="dashboard-card p-6 relative">
     <div className="table-blur absolute transform -translate-x-1/2 left-1/2 bottom-6 h-12 w-1/2"></div>
       <div className="space-y-2">
-        {/* Table Header */}
         <div className="portfolio-table-head grid grid-cols-3 gap-4 py-3 px-4">
           <div className="text-gray-400 text-sm font-medium">Coin</div>
           <div className="text-gray-400 text-sm font-medium">Quantity</div>
           <div className="text-gray-400 text-sm font-medium">Ratio</div>
         </div>
 
-        {/* Table Rows */}
         {assets.map((asset, index) => (
           <div key={index} className="portfolio-table-row grid grid-cols-3 gap-4 py-4 px-4">
             <div className="flex items-center gap-3">

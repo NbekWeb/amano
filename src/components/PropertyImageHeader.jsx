@@ -7,7 +7,6 @@ const PropertyImageHeader = ({ image, badges, title, location, isSaved, onSaveTo
   return (
     <div className="relative h-[500px] rounded-xl overflow-hidden">
       <img src={image} alt="Property" className="w-full h-full object-cover" />
-      {/* Save and Share buttons */}
       <div className="absolute top-4 right-4 flex gap-2">
         <button
           onClick={onSaveToggle}
@@ -21,13 +20,11 @@ const PropertyImageHeader = ({ image, badges, title, location, isSaved, onSaveTo
           Share
         </button>
       </div>
-      {/* Badges */}
       <div className="absolute bottom-20 left-4 flex gap-2">
         {badges.map((badge, index) => (
           <Badge key={index} label={badge} />
         ))}
       </div>
-      {/* Title and Location */}
       <div className="absolute bottom-4 left-4 right-4">
         <h1 className="text-3xl font-bold text-white mb-2">{title}</h1>
         <div className="flex items-center gap-2">

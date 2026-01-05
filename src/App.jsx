@@ -13,10 +13,8 @@ function AppContent() {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Get current page from pathname
   const getCurrentPage = () => {
     const path = location.pathname;
-    // Don't select any sidebar item for detail pages
     if (path.startsWith('/trading/') || path.startsWith('/holdings/')) {
       return null;
     }
@@ -59,7 +57,6 @@ function AppContent() {
               <Route path="/property/:id" element={<PropertyDetail />} />
               <Route path="/secondary-market" element={<SecondaryMarket />} />
               <Route path="/wallet" element={<Wallet />} />
-              {/* Add other routes as needed */}
       </Routes>
     </Layout>
   );

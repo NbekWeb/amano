@@ -5,7 +5,6 @@ const FeaturesSection = ({ features }) => {
       <h2 className="text-xl font-semibold text-white mb-4">Key Features & Amenities</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         {features.map((feature, index) => {
-          // Calculate row number (0-indexed)
           const row = Math.floor(index / 3);
           const isLastRow = row === Math.floor((features.length - 1) / 3);
           const isLastInRow = (index + 1) % 3 === 0;

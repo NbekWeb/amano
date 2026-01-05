@@ -87,7 +87,6 @@ const AdvancedFilters = ({ isOpen, onClose, onApply, onReset, buttonRef }) => {
         <h2 className="text-lg font-semibold text-white mb-4">Advanced Filters</h2>
         
         <div className="space-y-6">
-          {/* Expected Yield */}
           <div>
             <label className="text-white text-sm mb-2 block">
               Expected Yield: {expectedYield[0]}% - {expectedYield[1]}%
@@ -102,7 +101,6 @@ const AdvancedFilters = ({ isOpen, onClose, onApply, onReset, buttonRef }) => {
             />
           </div>
 
-          {/* Risk Level */}
           <div>
             <label className="text-white text-sm mb-3 block">Risk Level</label>
             <div className="flex flex-col gap-2">
@@ -120,7 +118,6 @@ const AdvancedFilters = ({ isOpen, onClose, onApply, onReset, buttonRef }) => {
             </div>
           </div>
 
-          {/* Location */}
           <div>
             <label className="text-white text-sm mb-3 block">Location</label>
             <div className="flex flex-col gap-2">
@@ -138,7 +135,6 @@ const AdvancedFilters = ({ isOpen, onClose, onApply, onReset, buttonRef }) => {
             </div>
           </div>
 
-          {/* Availability */}
           <div>
             <label className="text-white text-sm mb-3 block">Availability</label>
             <div className="flex flex-col gap-2">
@@ -173,7 +169,6 @@ const AdvancedFilters = ({ isOpen, onClose, onApply, onReset, buttonRef }) => {
           </div>
         </div>
 
-        {/* Action Buttons */}
         <div className="flex gap-3 mt-6 pt-6 border-t border-gray-700">
           <button
             onClick={handleReset}

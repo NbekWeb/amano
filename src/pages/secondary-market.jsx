@@ -103,13 +103,11 @@ const SecondaryMarket = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div>
         <h1 className="text-xl font-bold text-white mb-2">Secondary Market</h1>
         <p className="text-gray-400 text-sm">Trade assets with live order books and real-time pricing</p>
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {stats.map((stat, index) => (
           <div key={index} className="dashboard-card p-6 relative">
@@ -131,13 +129,11 @@ const SecondaryMarket = () => {
         ))}
       </div>
 
-      {/* Available Assets */}
       <div className="dashboard-card p-6">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-semibold text-white">Available Assets</h2>
         </div>
 
-        {/* Category Filters and Search */}
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
           <div className="flex gap-2 overflow-x-auto">
             {categories.map((category) => (
@@ -173,9 +169,7 @@ const SecondaryMarket = () => {
           </div>
         </div>
 
-        {/* Assets Table */}
         <div className="space-y-2">
-          {/* Table Header */}
           <div className="portfolio-table-head grid grid-cols-7 gap-4 py-3 px-4">
             <div className="text-gray-400 text-sm font-medium">Asset</div>
             <div className="text-gray-400 text-sm font-medium">Price</div>
@@ -186,7 +180,6 @@ const SecondaryMarket = () => {
             <div className="text-gray-400 text-sm font-medium">Action</div>
           </div>
 
-          {/* Table Rows */}
           {assets.map((asset) => (
             <div key={asset.id} className="portfolio-table-row grid grid-cols-7 gap-4 py-4 px-4">
               <div>

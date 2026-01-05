@@ -17,7 +17,6 @@ const Trading = () => {
   const [selectedTab, setSelectedTab] = useState('orders');
   const [selectedOrderType, setSelectedOrderType] = useState('limit');
 
-  // Price chart data
   const priceData = [
     { month: "Jan", price: 22000 },
     { month: "Feb", price: 21000 },
@@ -91,9 +90,7 @@ const Trading = () => {
 
   return (
     <div className="space-y-6">
-      {/* Portfolio Header Card with Price Cards */}
       <div className="flex flex-col lg:flex-row gap-4">
-        {/* Portfolio Header Card */}
         <div className="dashboard-card p-5 overflow-hidden flex-1 flex justify-between items-center relative">
         <img src={xIcon} alt="x" className="w-auto h-full left-1/2 top-0 transform -translate-x-1/2 absolute" />
           <div className="flex flex-col md:flex-row">
@@ -125,25 +122,20 @@ const Trading = () => {
         </div>
       </div>
 
-      {/* Main Content - 3 Cards in Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        {/* Price Chart - 2 columns */}
         <div className="md:col-span-2">
           <PriceChart data={priceData} />
         </div>
 
-        {/* Order Book - 1 column */}
         <div className="md:col-span-1">
           <OrderBook sellOrders={sellOrders} buyOrders={buyOrders} />
         </div>
 
-        {/* Buy/Sell Panel - 1 column */}
         <div className="md:col-span-1">
           <BuySellPanel />
         </div>
       </div>
 
-      {/* My Orders / My Trades */}
       <div className="dashboard-card p-6 relative">
       <div className="table-blur absolute top-5 left-1/2 transform -translate-x-1/2 h-10 w-1/2"></div>
         <div className="flex justify-between items-center mb-4">
