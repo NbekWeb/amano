@@ -1,14 +1,14 @@
-# React App with Tailwind CSS, Redux Toolkit & Axios
+# React App с Tailwind CSS, Redux Toolkit & Axios
 
-Bu loyiha React, Tailwind CSS, Redux Toolkit va Axios bilan yaratilgan.
+Этот проект создан с использованием React, Tailwind CSS, Redux Toolkit и Axios.
 
-## O'rnatish
+## Установка
 
 ```bash
 npm install
 ```
 
-## Ishga tushirish
+## Запуск
 
 Development server:
 ```bash
@@ -20,55 +20,55 @@ Production build:
 npm run build
 ```
 
-## Texnologiyalar
+## Технологии
 
-- **React 18** - UI kutubxonasi
-- **Vite** - Build tool
-- **Tailwind CSS** - CSS framework
-- **Redux Toolkit** - State management
-- **Axios** - HTTP client
+- **React 18** - UI библиотека
+- **Vite** - Инструмент сборки
+- **Tailwind CSS** - CSS фреймворк
+- **Redux Toolkit** - Управление состоянием
+- **Axios** - HTTP клиент
 
-## Loyiha strukturi
+## Структура проекта
 
 ```
 react-app/
 ├── src/
-│   ├── components/     # React komponentlar
-│   ├── store/          # Redux store va slice'lar
-│   │   └── slices/     # Redux slice'lar
-│   ├── services/       # API xizmatlari
-│   ├── utils/          # Utility funksiyalar
-│   ├── App.jsx         # Asosiy komponent
-│   ├── main.jsx        # Entry point
-│   └── index.css       # Global styles
-├── public/             # Static fayllar
+│   ├── components/     # React компоненты
+│   ├── store/          # Redux store и slice'ы
+│   │   └── slices/     # Redux slice'ы
+│   ├── services/       # API сервисы
+│   ├── utils/          # Утилитарные функции
+│   ├── App.jsx         # Главный компонент
+│   ├── main.jsx        # Точка входа
+│   └── index.css       # Глобальные стили
+├── public/             # Статические файлы
 ├── package.json
 └── vite.config.js
 ```
 
-## Foydalanish
+## Использование
 
 ### Redux Store
 
-Store `/src/store/store.js` faylida sozlangan. Yangi slice qo'shish uchun:
+Store настроен в файле `/src/store/store.js`. Чтобы добавить новый slice:
 
-1. `src/store/slices/` papkasida yangi slice yarating
-2. `store.js` faylida import qiling va reducer'ga qo'shing
+1. Создайте новый slice в папке `src/store/slices/`
+2. Импортируйте его в файле `store.js` и добавьте в reducer
 
 ### API Service
 
-Axios instance `/src/services/api.js` faylida sozlangan. API so'rovlarini shu orqali amalga oshiring:
+Экземпляр Axios настроен в файле `/src/services/api.js`. Выполняйте API запросы через него:
 
 ```javascript
 import { apiService } from './services/api'
 
-// GET request
+// GET запрос
 const data = await apiService.get('/endpoint')
 
-// POST request
+// POST запрос
 const response = await apiService.post('/endpoint', { data })
 ```
 
 ### Tailwind CSS
 
-Tailwind CSS sozlangan va ishga tayyor. Komponentlarda Tailwind class'larini ishlatishingiz mumkin.
+Tailwind CSS настроен и готов к использованию. Вы можете использовать Tailwind классы в компонентах.
