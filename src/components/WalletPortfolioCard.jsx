@@ -1,17 +1,25 @@
-import { useNavigate } from 'react-router-dom';
-import highIcon from '../assets/img/high.svg';
-import DepositIcon from './icons/deposit';
-import WithdrawIcon from './icons/withdraw';
+import { useNavigate } from "react-router-dom";
+import highIcon from "../assets/img/high.svg";
+import DepositIcon from "./icons/deposit";
+import WithdrawIcon from "./icons/withdraw";
+import xIcon from "../assets/img/x.svg";
 
 const WalletPortfolioCard = ({ totalValue, change }) => {
   const navigate = useNavigate();
 
   return (
     <div className="dashboard-card p-6 relative">
+      <img
+        src={xIcon}
+        alt="x"
+        className="w-auto h-full left-1/2 top-0 transform -translate-x-1/2 absolute"
+      />
       <div className="stat-card-blur absolute top-6 rounded-lg -right-3 h-12.5 w-41"></div>
       <div className="flex justify-between items-start">
         <div>
-          <div className="text-gray-400 text-sm mb-1">Total Portfolio Value</div>
+          <div className="text-gray-400 text-sm mb-1">
+            Total Portfolio Value
+          </div>
           <div className="text-white font-bold text-3xl mb-2">{totalValue}</div>
           <div className="flex items-center gap-1 text-success text-sm">
             <img src={highIcon} alt="trend" className="w-4 h-4" />
@@ -20,15 +28,15 @@ const WalletPortfolioCard = ({ totalValue, change }) => {
         </div>
         <div className="flex gap-3">
           <button
-            onClick={() => navigate('/deposit')}
-            className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary-hover transition-colors flex items-center gap-2"
+            onClick={() => navigate("/deposit")}
+            className="px-4 py-2 bg-bg-dark border border-gray-600 text-white rounded-lg text-sm font-medium hover:bg-gray-700 hover:text-white transition-colors flex items-center gap-2"
           >
             <DepositIcon />
             Deposit
           </button>
           <button
-            onClick={() => navigate('/withdraw')}
-            className="px-4 py-2 bg-bg-dark border border-gray-600 text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-700 hover:text-white transition-colors flex items-center gap-2"
+            onClick={() => navigate("/withdraw")}
+            className="px-4 py-2 bg-bg-dark border border-gray-600 text-white rounded-lg text-sm font-medium hover:bg-gray-700 hover:text-white transition-colors flex items-center gap-2"
           >
             <WithdrawIcon />
             Withdraw
@@ -40,4 +48,3 @@ const WalletPortfolioCard = ({ totalValue, change }) => {
 };
 
 export default WalletPortfolioCard;
-
