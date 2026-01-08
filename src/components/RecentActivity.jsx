@@ -7,8 +7,8 @@ const RecentActivity = ({ activities }) => {
     <div className="dashboard-card p-6 h-full">
       <div className="stat-card-blur  absolute left-6 top-10 h-12 w-40 "></div>
       <div className="stat-card-blur2  absolute right-6 bottom-10 h-12 w-40 "></div>
-      <h2 className="text-xl font-semibold text-white mb-4">Recent Activity</h2>
-      <div className="space-y-3">
+      <h2 className="text-lg font-semibold text-white mb-3">Recent Activity</h2>
+      <div className="flex flex-col gap-1.5">
         {activities.map((activity, index) => (
             <div key={index} className="recent-activity-item">
               <LiquidGlassButton width={40} height={40} radius="8" >

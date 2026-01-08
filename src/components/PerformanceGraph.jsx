@@ -27,7 +27,7 @@ const PerformanceGraph = ({ data }) => {
             className="ml-auto"
           />
         </div>
-        <div className="h-64">
+        <div className="h-104">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={data}>
               <defs>
