@@ -8,26 +8,32 @@ const PriceChart = ({ data }) => {
     <div className="dashboard-card p-6  h-full">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-semibold text-white">Price chart.</h3>
-        <div className="flex gap-2">
+        <div className="flex gap-2 border border-white/10 p-0.5 rounded-lg">
           <button 
             onClick={() => setSelectedView('original')}
-            className={`px-4 py-1 rounded-lg text-sm font-medium transition-all ${
-              selectedView === 'original'
-                ? 'bg-white/10 backdrop-blur-sm border border-white/20 text-white'
-                : 'border border-gray-600 text-gray-400 hover:text-white hover:border-gray-500'
-            }`}
+            className={`price-chart-btn ${selectedView === 'original' ? 'price-chart-btn-active' : 'price-chart-btn-inactive'}`}
           >
-            Original
+            {selectedView === 'original' && (
+              <>
+                <span className="price-chart-btn-effect"></span>
+                <span className="price-chart-btn-tint"></span>
+                <span className="price-chart-btn-shine"></span>
+              </>
+            )}
+            <span className="price-chart-btn-content">Original</span>
           </button>
           <button 
             onClick={() => setSelectedView('depth')}
-            className={`px-4 py-1 rounded-lg text-sm font-medium transition-all ${
-              selectedView === 'depth'
-                ? 'bg-white/10 backdrop-blur-sm border border-white/20 text-white'
-                : 'border border-gray-600 text-gray-400 hover:text-white hover:border-gray-500'
-            }`}
+            className={`price-chart-btn ${selectedView === 'depth' ? 'price-chart-btn-active' : 'price-chart-btn-inactive'}`}
           >
-            Depth
+            {selectedView === 'depth' && (
+              <>
+                <span className="price-chart-btn-effect"></span>
+                <span className="price-chart-btn-tint"></span>
+                <span className="price-chart-btn-shine"></span>
+              </>
+            )}
+            <span className="price-chart-btn-content">Depth</span>
           </button>
         </div>
       </div>

@@ -9,6 +9,7 @@ import TransIcon from "../icons/trans";
 import AnalyticsIcon from "../icons/analytics";
 import SettingsIcon from "../icons/settings";
 import logo from "../../assets/img/logo.svg";
+import SidebarLiquidGlassItem from "../SidebarLiquidGlassItem";
 
 const Sidebar = ({ currentPage, setCurrentPage }) => {
   const menuItems = [
@@ -36,27 +37,27 @@ const Sidebar = ({ currentPage, setCurrentPage }) => {
           const isActive = currentPage === item.id;
 
           return (
-            <button
+            <SidebarLiquidGlassItem
               key={item.id}
               onClick={() => setCurrentPage(item.id)}
-              className={`sidebar-button flex items-center gap-3 px-4 py-3 transition-all ${
-                isActive
-                  ? "sidebar-button-active text-white"
-                  : "text-gray-400 hover:text-white hover:bg-bg-hover rounded-lg"
-              }`}
+              isActive={isActive}
+              className={isActive ? "text-white" : "text-gray-400"}
             >
               <Icon />
               <span className="text-sm font-medium">{item.label}</span>
-            </button>
+            </SidebarLiquidGlassItem>
           );
         })}
       </nav>
 
       <div className="p-4 border-t border-gray-800 relative z-10">
-        <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-bg-hover transition-all">
+        <SidebarLiquidGlassItem
+          onClick={() => setCurrentPage("Settings")}
+          className="text-gray-400"
+        >
           <SettingsIcon />
           <span className="text-sm font-medium">Settings</span>
-        </button>
+        </SidebarLiquidGlassItem>
       </div>
     </div>
   );

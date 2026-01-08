@@ -23,7 +23,7 @@ const PortfolioAllocations = ({ data, totalValue }) => {
 
   return (
     <div className="dashboard-card p-6">
-    <div className="table-blur  absolute right-1  top-10 h-12 w-1/3 "></div>
+    <div className="stat-card-blur3 border  absolute right-1  top-10 h-16 w-1/2 "></div>
       <h2 className="text-xl font-semibold text-white mb-4">Portfolio Allocations</h2>
       
       <div className="h-32 mb-6 relative ">

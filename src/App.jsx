@@ -45,8 +45,10 @@ function AppContent() {
     navigate(routes[pageId] || '/');
   };
 
+  const hideSidebar = location.pathname.startsWith('/trading/');
+
   return (
-    <Layout currentPage={getCurrentPage()} setCurrentPage={handlePageChange}>
+    <Layout currentPage={getCurrentPage()} setCurrentPage={handlePageChange} hideSidebar={hideSidebar}>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/portfolio" element={<Portfolio />} />

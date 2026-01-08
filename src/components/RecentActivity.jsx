@@ -1,5 +1,6 @@
 import checkIcon from "../assets/img/check.svg";
 import pendingIcon from "../assets/img/pending.svg";
+import LiquidGlassButton from "./LiquidGlassButton";
 
 const RecentActivity = ({ activities }) => {
   return (
@@ -9,10 +10,10 @@ const RecentActivity = ({ activities }) => {
       <h2 className="text-xl font-semibold text-white mb-4">Recent Activity</h2>
       <div className="space-y-3">
         {activities.map((activity, index) => (
-          <div key={index} className="recent-activity-item">
-            <div className="recent-activity-icon-wrapper">
+            <div key={index} className="recent-activity-item">
+              <LiquidGlassButton width={40} height={40} radius="8" >
               <div className="recent-activity-icon-inner">{activity.icon}</div>
-            </div>
+            </LiquidGlassButton>
             <div className="flex-1 min-w-0">
               <p className="text-white text-sm mb-1 font-normal">
                 {activity.description}

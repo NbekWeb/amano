@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import nImage from '../assets/img/n.png';
+import LiquidGlassButton from './LiquidGlassButton';
 
 const HoldingsCard = ({ title, currentValue, expectedYield, badge, id }) => {
   const navigate = useNavigate();
@@ -22,8 +23,12 @@ const HoldingsCard = ({ title, currentValue, expectedYield, badge, id }) => {
           className="w-full h-48 object-cover"
         />
         {badge && (
-          <div className="absolute top-3 right-3">
-            <span className="holdings-badge">{badge}</span>
+          <div className="absolute top-3 left-3">
+            {/* <span className="holdings-badge">{badge}</span> */}
+            <LiquidGlassButton width='auto' height={20} radius="12" className="btns">
+            <span className="text-xs px-3">{badge}</span>
+            
+            </LiquidGlassButton>
           </div>
         )}
       </div>

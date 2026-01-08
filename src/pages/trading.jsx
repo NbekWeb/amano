@@ -7,15 +7,16 @@ import locIcon from "../assets/img/loc.svg";
 import PriceChart from "../components/PriceChart";
 import OrderBook from "../components/OrderBook";
 import BuySellPanel from "../components/BuySellPanel";
-import PriceInfoCards from "../components/PriceInfoCards";  
+import PriceInfoCards from "../components/PriceInfoCards";
 import xIcon from "../assets/img/x.svg";
 import editIcon from "../assets/img/edit.svg";
+import LiquidGlassButton from "../components/LiquidGlassButton";
 
 const Trading = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [selectedTab, setSelectedTab] = useState('orders');
-  const [selectedOrderType, setSelectedOrderType] = useState('limit');
+  const [selectedTab, setSelectedTab] = useState("orders");
+  const [selectedOrderType, setSelectedOrderType] = useState("limit");
 
   const priceData = [
     { month: "Jan", price: 22000 },
@@ -92,7 +93,11 @@ const Trading = () => {
     <div className="space-y-6">
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="dashboard-card p-5 overflow-hidden flex-1 flex justify-between items-center relative">
-        <img src={xIcon} alt="x" className="w-auto h-full left-1/2 top-0 transform -translate-x-1/2 absolute" />
+          <img
+            src={xIcon}
+            alt="x"
+            className="w-auto h-full left-1/2 top-0 transform -translate-x-1/2 absolute"
+          />
           <div className="flex flex-col md:flex-row">
             <div className="w-auto h-19">
               <img
@@ -137,104 +142,153 @@ const Trading = () => {
       </div>
 
       <div className="dashboard-card p-6 relative">
-      <div className="table-blur absolute top-5 left-1/2 transform -translate-x-1/2 h-10 w-1/2"></div>
+        <div className="table-blur absolute top-5 left-1/2 transform -translate-x-1/2 h-10 w-1/2"></div>
         <div className="flex justify-between items-center mb-4">
           <div className="flex gap-2">
-            <button 
-              onClick={() => setSelectedTab('orders')}
+            <button
+              onClick={() => setSelectedTab("orders")}
               className={`px-4 py-2.5 rounded-lg font-medium transition-all ${
-                selectedTab === 'orders'
-                  ? 'bg-primary/15 text-primary'
-                  : 'text-gray-400 hover:text-white'
+                selectedTab === "orders"
+                  ? "bg-primary/15 text-primary"
+                  : "text-gray-400 hover:text-white"
               }`}
             >
               My orders
             </button>
-            <button 
-              onClick={() => setSelectedTab('trades')}
+            <button
+              onClick={() => setSelectedTab("trades")}
               className={`px-4 py-2.5 rounded-lg font-medium transition-all ${
-                selectedTab === 'trades'
-                  ? 'bg-primary/15 text-primary'
-                  : 'text-gray-400 hover:text-white'
+                selectedTab === "trades"
+                  ? "bg-primary/15 text-primary"
+                  : "text-gray-400 hover:text-white"
               }`}
             >
               My trades
             </button>
           </div>
-          <button className="px-4 py-2 bg-bg-dark border border-gray-600 text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-700 hover:text-white transition-colors">
+          <LiquidGlassButton width={100} height={30} radius="8">
             Cancel all
-          </button>
+          </LiquidGlassButton>
         </div>
-        <div className="flex gap-2 mb-4 overflow-x-auto">
-          <button 
-            onClick={() => setSelectedOrderType('limit')}
-            className={`px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-              selectedOrderType === 'limit'
-                ? 'bg-bg-dark border border-white/20 text-white'
-                : 'text-gray-400 hover:text-white'
+        <div className="flex gap-2 mb-4 overflow-x-auto border border-white/10 p-0.5 rounded-lg">
+          <button
+            onClick={() => setSelectedOrderType("limit")}
+            className={`order-type-btn px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+              selectedOrderType === "limit"
+                ? "order-type-btn-active"
+                : "order-type-btn-inactive"
             }`}
           >
-            Limit market (1)
+            {selectedOrderType === "limit" && (
+              <>
+                <span className="order-type-btn-effect"></span>
+                <span className="order-type-btn-tint"></span>
+                <span className="order-type-btn-shine"></span>
+              </>
+            )}
+            <span className="order-type-btn-content">Limit market (1)</span>
           </button>
-          <button 
-            onClick={() => setSelectedOrderType('trigger')}
-            className={`px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-              selectedOrderType === 'trigger'
-                ? 'bg-bg-dark border border-white/20 text-white'
-                : 'text-gray-400 hover:text-white'
+          <button
+            onClick={() => setSelectedOrderType("trigger")}
+            className={`order-type-btn px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+              selectedOrderType === "trigger"
+                ? "order-type-btn-active"
+                : "order-type-btn-inactive"
             }`}
           >
-            Trigger (0)
+            {selectedOrderType === "trigger" && (
+              <>
+                <span className="order-type-btn-effect"></span>
+                <span className="order-type-btn-tint"></span>
+                <span className="order-type-btn-shine"></span>
+              </>
+            )}
+            <span className="order-type-btn-content">Trigger (0)</span>
           </button>
-          <button 
-            onClick={() => setSelectedOrderType('oco')}
-            className={`px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-              selectedOrderType === 'oco'
-                ? 'bg-bg-dark border border-white/20 text-white'
-                : 'text-gray-400 hover:text-white'
+          <button
+            onClick={() => setSelectedOrderType("oco")}
+            className={`order-type-btn px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+              selectedOrderType === "oco"
+                ? "order-type-btn-active"
+                : "order-type-btn-inactive"
             }`}
           >
-            OCO (0)
+            {selectedOrderType === "oco" && (
+              <>
+                <span className="order-type-btn-effect"></span>
+                <span className="order-type-btn-tint"></span>
+                <span className="order-type-btn-shine"></span>
+              </>
+            )}
+            <span className="order-type-btn-content">OCO (0)</span>
           </button>
-          <button 
-            onClick={() => setSelectedOrderType('tpsl')}
-            className={`px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-              selectedOrderType === 'tpsl'
-                ? 'bg-bg-dark border border-white/20 text-white'
-                : 'text-gray-400 hover:text-white'
+          <button
+            onClick={() => setSelectedOrderType("tpsl")}
+            className={`order-type-btn px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+              selectedOrderType === "tpsl"
+                ? "order-type-btn-active"
+                : "order-type-btn-inactive"
             }`}
           >
-            TP/SL (0)
+            {selectedOrderType === "tpsl" && (
+              <>
+                <span className="order-type-btn-effect"></span>
+                <span className="order-type-btn-tint"></span>
+                <span className="order-type-btn-shine"></span>
+              </>
+            )}
+            <span className="order-type-btn-content">TP/SL (0)</span>
           </button>
-          <button 
-            onClick={() => setSelectedOrderType('trailing')}
-            className={`px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-              selectedOrderType === 'trailing'
-                ? 'bg-bg-dark border border-white/20 text-white'
-                : 'text-gray-400 hover:text-white'
+          <button
+            onClick={() => setSelectedOrderType("trailing")}
+            className={`order-type-btn px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+              selectedOrderType === "trailing"
+                ? "order-type-btn-active"
+                : "order-type-btn-inactive"
             }`}
           >
-            Trailing stop (0)
+            {selectedOrderType === "trailing" && (
+              <>
+                <span className="order-type-btn-effect"></span>
+                <span className="order-type-btn-tint"></span>
+                <span className="order-type-btn-shine"></span>
+              </>
+            )}
+            <span className="order-type-btn-content">Trailing stop (0)</span>
           </button>
-          <button 
-            onClick={() => setSelectedOrderType('iceberg')}
-            className={`px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-              selectedOrderType === 'iceberg'
-                ? 'bg-bg-dark border border-white/20 text-white'
-                : 'text-gray-400 hover:text-white'
+          <button
+            onClick={() => setSelectedOrderType("iceberg")}
+            className={`order-type-btn px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+              selectedOrderType === "iceberg"
+                ? "order-type-btn-active"
+                : "order-type-btn-inactive"
             }`}
           >
-            Iceberg (0)
+            {selectedOrderType === "iceberg" && (
+              <>
+                <span className="order-type-btn-effect"></span>
+                <span className="order-type-btn-tint"></span>
+                <span className="order-type-btn-shine"></span>
+              </>
+            )}
+            <span className="order-type-btn-content">Iceberg (0)</span>
           </button>
-          <button 
-            onClick={() => setSelectedOrderType('twap')}
-            className={`px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-              selectedOrderType === 'twap'
-                ? 'bg-bg-dark border border-white/20 text-white'
-                : 'text-gray-400 hover:text-white'
+          <button
+            onClick={() => setSelectedOrderType("twap")}
+            className={`order-type-btn px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+              selectedOrderType === "twap"
+                ? "order-type-btn-active"
+                : "order-type-btn-inactive"
             }`}
           >
-            TWAP (0)
+            {selectedOrderType === "twap" && (
+              <>
+                <span className="order-type-btn-effect"></span>
+                <span className="order-type-btn-tint"></span>
+                <span className="order-type-btn-shine"></span>
+              </>
+            )}
+            <span className="order-type-btn-content">TWAP (0)</span>
           </button>
         </div>
         <div className="overflow-x-auto">
@@ -284,17 +338,21 @@ const Trading = () => {
                   <td className="py-3">
                     <div className="flex items-center gap-2">
                       <span className="text-gray-400 text-sm">-/-</span>
-                      <img src={editIcon} alt="edit" className="w-4 h-4 opacity-50" />
+                      <img
+                        src={editIcon}
+                        alt="edit"
+                        className="w-4 h-4 opacity-50"
+                      />
                     </div>
                   </td>
                   <td className="py-3">
                     <div className="flex gap-2">
-                      <button className="px-3 py-1 bg-bg-dark border border-gray-600 text-gray-300 rounded text-xs font-medium hover:bg-gray-700 hover:text-white transition-colors">
-                        Edit
-                      </button>
-                      <button className="px-3 py-1 bg-bg-dark border border-gray-600 text-gray-300 rounded text-xs font-medium hover:bg-gray-700 hover:text-white transition-colors">
-                        Cancel
-                      </button>
+                      <LiquidGlassButton width="auto" height={28} radius="8">
+                        <span className="px-3 text-xs text-white">Edit</span>
+                      </LiquidGlassButton>
+                      <LiquidGlassButton width="auto" height={28} radius="8">
+                      <span className="px-3 text-xs text-white">Cancel</span>
+                      </LiquidGlassButton>
                     </div>
                   </td>
                 </tr>

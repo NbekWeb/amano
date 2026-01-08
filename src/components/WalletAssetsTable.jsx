@@ -1,6 +1,6 @@
 const WalletAssetsTable = ({ assets }) => {
   return (
-    <div className="dashboard-card p-6 relative">
+    <div className="  relative">
     <div className="table-blur absolute transform -translate-x-1/2 left-1/2 bottom-6 h-12 w-1/2"></div>
       <div className="space-y-2">
         <div className="portfolio-table-head grid grid-cols-3 gap-4 py-3 px-4">

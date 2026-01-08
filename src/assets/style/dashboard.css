@@ -3,6 +3,7 @@
   border-radius: 17px;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 }
 
 .dashboard-card::before {
@@ -86,11 +87,11 @@
   background: linear-gradient(180deg, #010214 34.31%, #7e55ec 100%);
 }
 .stat-card-blur {
-  filter: blur(50px);
+  filter: blur(70px);
   background: #482f89;
   transform: rotate(-45deg);
 }
-.h-card-blur{
+.h-card-blur {
   filter: blur(80px);
   background: #482f89;
   transform: rotate(-45deg);
@@ -100,8 +101,11 @@
   background: #482f89;
   transform: rotate(45deg);
 }
-
-
+.stat-card-blur3 {
+  filter: blur(55px);
+  background: #482f89;
+  transform: rotate(-45deg);
+}
 
 /* Portfolio Holding Button */
 .portfolio-holding-button {
@@ -232,7 +236,7 @@
 
 /* ROL Column Styling */
 .portfolio-table-row td:nth-child(4) {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 100%;
@@ -240,11 +244,11 @@
 }
 
 .portfolio-table-row td:nth-child(4) .text-green-500 {
-  color: #47AA52;
+  color: #47aa52;
 }
 
 .portfolio-table-row td:nth-child(4) .text-red-500 {
-  color: #E75957;
+  color: #e75957;
 }
 
 /* Allocation Bar Styles */
@@ -268,7 +272,7 @@
 }
 
 .allocation-segment.active {
-  background-color: #856DFC;
+  background-color: #856dfc;
 }
 
 /* Portfolio Type Badge */
@@ -281,7 +285,7 @@
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.7);
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 /* Portfolio Status Badge */
@@ -294,7 +298,7 @@
   display: inline-block;
   background-color: rgba(19, 171, 61, 0.12);
   color: #13ab3d;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 /* Portfolio Allocation Item */
@@ -305,7 +309,7 @@
   padding: 8px 12px;
   background-color: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .portfolio-allocation-dot {
@@ -317,7 +321,11 @@
 
 /* Income Summary Card */
 .income-summary-card {
-  background: linear-gradient(180deg, rgba(131, 101, 255, 0.15) 0%, rgba(16, 16, 26, 0.02) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(131, 101, 255, 0.15) 0%,
+    rgba(16, 16, 26, 0.02) 100%
+  );
 }
 
 .income-dropdown {
@@ -440,8 +448,6 @@
   transform: scale(1.05);
 }
 
-
-
 /* Performance Analytics Tabs */
 .performance-tab-active {
   padding: 6px 14px;
@@ -499,7 +505,7 @@
 }
 
 .ownership-bar-filled {
-  background-color: #5DB2FF;
+  background-color: #5db2ff;
 }
 
 .ownership-bar-empty {
@@ -578,7 +584,7 @@
 }
 
 .advanced-filter-checkbox:checked::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -645,11 +651,11 @@
   inset: 0;
   border-radius: 17px;
   padding: 1px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.13) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
@@ -669,10 +675,450 @@
 .payout-status-badge {
   display: inline-block;
   padding: 4px 12px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(192, 190, 199, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
   font-weight: 500;
+}
+
+/* Custom Dropdown Liquid Glass Styles */
+.dropdown-lg-button {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease;
+}
+
+.dropdown-lg-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-lg-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  filter: url(#glass-distortion);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.dropdown-lg-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 190, 199, 0.1);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.dropdown-lg-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.dropdown-lg-content {
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-lg-menu {
+  background: transparent;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-lg-menu-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  filter: url(#glass-distortion);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.dropdown-lg-menu-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 190, 199, 0.1);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.dropdown-lg-menu-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.dropdown-lg-menu-content {
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-lg-menu-item {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-lg-menu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-lg-menu-item-active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Price Chart Button Liquid Glass */
+.price-chart-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.price-chart-btn-inactive {
+  color: rgba(156, 163, 175, 1);
+  border: none;
+  background: transparent;
+}
+
+.price-chart-btn-inactive:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.price-chart-btn-active {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.price-chart-btn-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  filter: url(#glass-distortion);
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.price-chart-btn-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 190, 199, 0.08);
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.price-chart-btn-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.price-chart-btn-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Buy Sell Panel Button Liquid Glass */
+.buy-sell-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buy-sell-btn-inactive {
+  color: rgba(156, 163, 175, 1);
+  border: none;
+  background: transparent;
+}
+
+.buy-sell-btn-inactive:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.buy-sell-btn-active {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.buy-sell-btn-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  filter: url(#glass-distortion);
+  border-radius: 24px;
+  z-index: 0;
+}
+
+.buy-sell-btn-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 190, 199, 0.08);
+  border-radius: 24px;
+  z-index: 0;
+}
+
+.buy-sell-btn-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  z-index: 0;
+}
+
+.buy-sell-btn-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Order Type Button Liquid Glass */
+.order-type-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.order-type-btn-inactive {
+  color: rgba(156, 163, 175, 1);
+  border: none;
+  background: transparent;
+}
+
+.order-type-btn-inactive:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.order-type-btn-active {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.order-type-btn-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  filter: url(#glass-distortion);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.order-type-btn-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 190, 199, 0.08);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.order-type-btn-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.order-type-btn-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Category Button Liquid Glass */
+.category-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-btn-inactive {
+  color: rgba(156, 163, 175, 1);
+  border: none;
+  background: transparent;
+}
+
+.category-btn-inactive:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.category-btn-active {
+  color: rgb(var(--color-primary-rgb));
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.category-btn-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  filter: url(#glass-distortion);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.category-btn-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 190, 199, 0.08);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.category-btn-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.category-btn-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Search Bar Liquid Glass */
+.search-bar-glass {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.search-bar-glass-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  filter: url(#glass-distortion);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.search-bar-glass-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 190, 199, 0.08);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.search-bar-glass-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.search-bar-glass-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Wallet Tab Button Liquid Glass */
+.wallet-tab-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: max-content;
+}
+
+.wallet-tab-btn-inactive {
+  color: rgba(156, 163, 175, 1);
+  border: none;
+  background: transparent;
+}
+
+.wallet-tab-btn-inactive:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.wallet-tab-btn-active {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.wallet-tab-btn-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  filter: url(#glass-distortion);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.wallet-tab-btn-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 190, 199, 0.08);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.wallet-tab-btn-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.wallet-tab-btn-content {
+  position: relative;
+  z-index: 1;
 }

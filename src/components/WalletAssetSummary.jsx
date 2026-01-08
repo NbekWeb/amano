@@ -1,5 +1,5 @@
 import highIcon from '../assets/img/high.svg';
-
+import LiquidGlassButton from './LiquidGlassButton';
 const WalletAssetSummary = ({ assets }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -7,9 +7,9 @@ const WalletAssetSummary = ({ assets }) => {
         <div key={index} className="dashboard-card p-6 relative">
           <div className="stat-card-blur absolute top-6 rounded-lg -right-3 h-12.5 w-41"></div>
           <div className="flex items-center gap-4">
-            <div className="stats-card-icon dashboard-card bg-white/5">
+            <LiquidGlassButton width={47} height={47} radius="full">
               {asset.icon}
-            </div>
+            </LiquidGlassButton>
             <div className="flex-1">
               <div className="text-gray-400 text-sm mb-1">{asset.title}</div>
               <div className="text-white font-bold text-2xl mb-1">{asset.value}</div>

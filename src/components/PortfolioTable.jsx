@@ -1,5 +1,6 @@
 import highIcon from '../assets/img/high.svg';
 import lowIcon from '../assets/img/low.svg';
+import LiquidGlassButton from './LiquidGlassButton';
 
 const PortfolioTable = ({ holdings }) => {
   return (
@@ -7,9 +8,9 @@ const PortfolioTable = ({ holdings }) => {
     <div className='table-blur absolute transform -translate-x-1/2 left-1/2 top-6 h-8 w-1/2'></div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-white">Portfolio Snapshot</h2>
-        <button className="portfolio-holding-button">
+        <LiquidGlassButton width={100} height={30} radius="8" className="btns">
           {holdings.length} Holding
-        </button>
+        </LiquidGlassButton>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full portfolio-table">

@@ -1,7 +1,7 @@
 const ComplianceCard = () => {
   return (
     <div className="dashboard-card p-6 compliance-card">
-      <h2 className="text-xl font-semibold text-white mb-2">
+      <h2 className="text-lg font-semibold text-white ">
         Compliance & Account
       </h2>
       <p className="text-gray-400 text-sm mb-4">Verify your account</p>

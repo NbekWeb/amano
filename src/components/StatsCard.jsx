@@ -1,4 +1,5 @@
 import highIcon from "../assets/img/high.svg";
+import LiquidGlassButton from "./LiquidGlassButton";
 
 const StatsCard = ({ title, value, percentage, icon }) => {
   return (
@@ -7,7 +8,7 @@ const StatsCard = ({ title, value, percentage, icon }) => {
         {" "}
       </div>
       <div className="flex items-start justify-between mb-4">
-        <div className="stats-card-icon">
+        <LiquidGlassButton width={47} height={47} radius="full">
           {icon || (
             <svg
               width="24"
@@ -25,7 +26,7 @@ const StatsCard = ({ title, value, percentage, icon }) => {
               />
             </svg>
           )}
-        </div>
+        </LiquidGlassButton>
       </div>
       <p
         className="text-gray-400 text-sm mb-2"

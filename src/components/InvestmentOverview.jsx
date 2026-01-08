@@ -26,7 +26,7 @@ const InvestmentOverview = ({
   
   const tokenCount = tokenAvailable ? parseInt(tokenAvailable.match(/\d+/)?.[0] || '120') : 120;
   return (
-    <div className="dashboard-card p-6 relative">
+    <div className="dashboard-card p-6 relative ">
     <div className="table-blur absolute top-3 rounded-lg right-3 h-10 w-1/2 "></div>
       <h2 className="text-xl font-semibold text-white mb-4">Investment Overview</h2>
       
