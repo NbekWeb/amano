@@ -1,33 +1,22 @@
-const SidebarLiquidGlassItem = ({
-  children,
-  onClick,
-  className = "",
-  isActive = false,
-  width = 197,
-  height = 38,
-  radius = 10,
-}) => {
-  const borderRadius = `${radius}px`;
-
+import sa from "../assets/img/sa.svg";
+const SidebarLiquidGlassItem = ({ children, onClick, isActive = false }) => {
   return (
     <button
       onClick={onClick}
-      className={`sidebar-lg-item ${
-        isActive ? "sidebar-lg-active" : ""
-      } ${className}`}
+      className={`sidebar-lg-item ${isActive ? "sidebar-lg-active" : ""}`}
       style={{
-        width,
-        height,
-        borderRadius,
+        borderRadius: "10px",
+        "--r": "10px",
+        "--eat": "4.5px",
       }}
     >
       {isActive && (
         <>
-          <span className="sidebar-lg-effect" style={{ borderRadius }} />
-          <span className="sidebar-lg-tint" style={{ borderRadius }} />
-          <span className="sidebar-lg-shine" style={{ borderRadius }} />
+          <span class="glass-border"></span>
+          <img src={sa} alt="sa" className="w-full h-full absolute top-0 left-0" />
         </>
       )}
+
       <span className="sidebar-lg-content">{children}</span>
     </button>
   );
